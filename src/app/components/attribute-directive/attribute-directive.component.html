@@ -1,0 +1,101 @@
+<div class="mt-2 p-2 bg-secondary text-white rounded">
+    <h1>Attribute Directive</h1>
+    <p>[ngClass], [ngStyle]</p>
+    <button class="btn btn-primary" [routerLink]="['/structural-directive']">Go To Structural</button>
+</div>
+<div class="mt-3">
+    <h4>1. ngClass</h4>
+</div>
+<div class="row m-3">
+    <div class="col-3" [ngClass]="div1BgColor">
+        <div class="p-3 text-center">
+            <h4>Div-1 </h4>
+        </div>
+    </div>
+    <div class="col-3">
+        <div class="p-3 text-center" [ngClass]="isDiv2Active==true?'bg-success':'bg-warning'">
+            <h4>Div-2 </h4>
+        </div>
+    </div>
+    <div class="col-3" [ngClass]="num1==num2?'bg-secondary':'bg-success'">
+        <div class="text-center">
+            <h4>Div-3 </h4>
+        </div>
+    </div>
+    <div class="col-3">
+        <!-- <div class="p-3 text-center" [ngClass]="isActive?'bg-primary':'bg-warning'">
+            <h4>Div-4 </h4>
+        </div> -->
+        <div class="p-3 text-center" [ngClass]="countryName=='India'?'bg-success':'bg-warning'">
+            <h4>Div-4 </h4>
+        </div>
+    </div>
+</div>
+<div class="row m-3">
+    <div class="col-3 text-center">
+        <button class="btn btn-danger" (click)="AddRedColor()">Add Red</button>
+        <button class="btn btn-primary mx-2" (click)="AddBlueColor()">Add Blue</button>
+    </div>
+    <div class="col-3 text-center">
+        <button class="btn btn-success" (click)="toggleDiv2()">Toggle</button>
+    </div>
+    <div class="col-3">
+        <div style="display: flex;align-items:center;">
+            <input type="text" [(ngModel)]="num1" placeholder="Num-1" style="width: 116px; margin-right: 20px;">
+            <input type="text" [(ngModel)]="num2" placeholder="Num-2" style="width: 116px;">
+        </div>
+    </div>
+    <div class="col-3">
+        <div style="display: flex;align-items:center;">
+            <input type="checkbox" [(ngModel)]="isActive" style="margin:0px 25px 0px 25px;">
+            <select [(ngModel)]="countryName">
+                <option value="">Select State</option>
+                <option value="India">India</option>
+                <option value="USA">USA</option>
+                <option value="Shrilanka">Shrilanka</option>
+            </select>
+        </div>
+    </div>
+</div>
+
+
+<div class="mt-3">
+    <h4>2. ngStyle</h4>
+</div>
+<div class="row m-3">
+    <div style="background-color: powderblue;" class="col-5">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>City</th>
+                    <th>Status</th>
+                    <th>Gender</th>
+                    <th>Total Mark</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let s of student">
+                    <th>{{s.name}}</th>
+                    <th>{{s.city}}</th>
+                    <th [ngStyle]="{'background-color':s.isActives ?'green':'red'}">
+                        <span>{{s.isActives?'Active':'De-active'}}</span>
+                    </th>
+                    <th>{{s.gender}}</th>
+                    <th>
+                        <div class="progress">
+                            <div class="progress-bar" [ngStyle]="{'width': s.totalMarks + '%' }">
+                                {{s.totalMarks}}
+                            </div>
+                        </div>
+                    </th>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="col-5">
+        <div [ngStyle]="customeStyle">
+            Div Test
+        </div>
+    </div>
+</div>

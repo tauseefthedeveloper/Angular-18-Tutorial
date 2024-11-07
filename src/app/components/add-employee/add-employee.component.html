@@ -1,0 +1,33 @@
+<div class="row p-3 m-3 bg-secondary text-white rounded">
+    <h1> add-employee works!</h1>
+    <h4 >From add employee css</h4>
+
+</div>
+<div class="row m-3">
+    <div class="col">
+        <table class="table table-bordered">
+            <tr>
+                <th>S. no</th>
+                <th>Name</th>
+                <th>Username</th>
+                <th>Email</th>
+                <th>Website</th>
+            </tr>
+            @for (item of userList(); track $index) {
+            <tr>
+                <td>{{$index+1}}</td>
+                <td>{{item.name}}</td>
+                <td>{{item.username}}</td>
+                <td>{{item.email}}</td>
+                <td>{{item.website}}</td>
+            </tr>
+            }
+        </table>
+    </div>
+    <div class="col-3">
+        {{name}}
+    </div>
+    <div class="col-3">
+        <button class="btn btn-success" (click)="reloadUI()">Reload UI</button>
+    </div>
+</div>

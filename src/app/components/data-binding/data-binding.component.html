@@ -1,0 +1,42 @@
+<div style="margin:0px 50px 50px 50px;">
+    <h1>Data Binding</h1>
+    <div class="row">
+        <h2>1. One-Way Data Binding</h2>
+        <div class="col4 bg-success">
+            <h3>a. Interpolation</h3>
+            <h4>{{courseName}}</h4>
+            <div>{{inputType}}</div>
+            <input type="text" value="{{courseName}}" placeholder="Enter your name"><br>
+            <input type="{{inputType}}" />
+        </div>
+        <div class="col4 bg-primary">
+            <h3>b. Property Binding</h3>
+            <div [class]="myClassname">bg-primary</div>
+            <input type="text" [value]="courseName">
+            <input [type]="inputType">
+            <button class="btn btn-success" (click)="showAlert('Welcome into Angular 18')">Show Welcome</button>
+            <span (click)="showAlert('this is from span tag')">Click here</span>
+            <button (click)="changeCourseName()" class="btn btn-danger">Change Course</button>
+        </div>
+    </div>
+    <div class="row">
+        <h2>2. Two-Way Data Binding</h2>
+        <div class="col4">
+            <input type="text" [(ngModel)]="courseName">{{courseName}}
+        </div>
+        <div class="col4">
+            <select [(ngModel)]="stateName">
+                <option value="---">Select</option>
+                <option value="Maharashtra">Maharashtra</option>
+                <option value="Goa">Goa</option>
+                <option value="Punjab">Punjab</option>
+            </select>
+        </div>
+        <div class="col4">
+               India <input type="checkbox" [(ngModel)]="isIndian">
+               <div class="bg-primary">{{name()}}</div>
+               <button (click)="changeCourseName()" class="btn btn-danger">Change Name</button>
+        </div>
+    </div>
+
+</div>

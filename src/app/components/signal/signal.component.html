@@ -1,0 +1,36 @@
+<div class="row m-3 p-3 bg-secondary text-white rounded">
+    <h2>Signal's</h2>
+    <h6>Create signal, Update signal, Display signal</h6>
+</div>
+<div class="row m-1 text-center">
+    <div class="col-3 text-center">
+        <p>{{firstName()}} - {{changeCourse}}</p>
+        <button (click)="onChange()" class="btn btn-primary mt-1">Change Name</button>
+    </div>
+    <div class="col-3">
+        <p>{{rollno()}}</p>
+    </div>
+    <div class="col-3">
+        <p>{{fname}}</p>
+    </div>
+    <div class="col-3 text-center">
+        <p>Full Name - {{fullName()}}</p>
+        <div class="row text-center">
+            <div class="col-12">
+                <button class="btn btn-danger" (click)="onChange()">Change Fname</button>
+                <button class="btn btn-success mt-1" (click)="onChangeLastName()">Change Lname</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row m-1">
+    <div class="col-4">
+        <p>City List - {{cityList()}}</p>
+        <button class="btn btn-secondary" (click)="addCity()">Add City</button>
+    </div>
+    <div class="col-4">
+        <p>Student - {{studentObj().name}}</p>
+        <p>Student - {{studentObj().city}}</p>
+        <button class="btn btn-dark" (click)="AddstudentCity()">Add Student City</button>
+    </div>
+</div>

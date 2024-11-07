@@ -1,0 +1,58 @@
+<div class="row bg-secondary text-white p-3 mt-3 rounded">
+    <h2>ng-template</h2>
+</div>
+<div class="row mt-2">
+    <div class="col-3">
+        <div class="bg-primary p-3" *ngIf="isUserLoggedIn; else notLogged;">
+            {{userName}}
+        </div>
+        <ng-template #notLogged>
+            <div class="bg-danger p-3">
+                <span>User not Logged In</span>
+            </div>
+        </ng-template>
+    </div>
+    <div class="col-3">
+        <div class="col-3">
+            <ng-template #dynamicTemplate>
+                <p class="bg-info p-3">Hi from paragraph0</p>
+            </ng-template>
+        </div>
+        <div class="col-3">
+            <ng-template #dynamicTemplate1>
+                <p class="bg-info p-3">Hi from paragraph1</p>
+            </ng-template>
+        </div>
+        <div class="col-3">
+            <ng-template #dynamicTemplate2>
+                <p class="bg-info p-3">Hi from paragraph2</p>
+            </ng-template>
+        </div>
+    </div>
+</div>
+<div class="row mt-2 text-center">
+    <div class="col">
+        <div class="row">
+            <div class="col-4">
+                <div #dynamicContainer>
+
+                </div>
+            </div>
+            <div class="col-4">
+                <div #dynamicContainer1>
+
+                </div>
+            </div>
+            <div class="col-4">
+                <div #dynamicContainer2>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-3">
+        <button class="btn btn-danger mx-4 mx-2" (click)="loadTemplate()">Load Content0</button>
+        <button class="btn btn-danger mx-3 my-2" (click)="loadTemplate1()">Load Content1</button>
+        <button class="btn btn-danger" (click)="loadTemplate2()">Load Content2</button>
+    </div>
+</div>

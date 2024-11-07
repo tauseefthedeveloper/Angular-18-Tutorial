@@ -1,0 +1,94 @@
+<div class="text-white">
+    <div class="bg-secondary p-3 m-3 rounded">
+      <h2>Controle flow statement</h2>
+      <h6>&#64;For, &#64;Switch case</h6>
+    </div>
+</div>
+<h6>1.&#64;Switch case</h6>
+<div class="row">
+    <div class="col-3">
+        <input placeholder="Day number between 1-7" [(ngModel)]="dayNumber" type="text" >
+    </div>
+    <div class="col-3">
+        Day name is:
+        @switch (dayNumber) {
+            @case ('1') {
+                <span>Monday</span>
+            }
+            @case ('2') {
+                <span>Tuesday</span>
+            }
+            @case ('3') {
+                <span>Wednesday</span>
+            }
+            @case ('4') {
+                <span>Thurseday</span>
+            }
+            @case ('5') {
+                <span>Friday</span>
+            }
+            @case ('6') {
+                <span>Saturday</span>
+            }
+            @case ('7') {
+                <span>Sunday</span>
+            }
+            @default {
+                <span>Enter the day number between 1 to 7</span>
+            }
+        }
+    </div>
+</div>
+<h6>2.&#64;For loop</h6>
+<div class="row">
+    <div class="col-3">
+        <ul>
+            @for (item of city; track $index) {
+                <li>{{item}}</li>
+            }
+        </ul>
+    </div>
+    <div class="col-3">
+        @for (item of city; track $index) {
+            <div>{{item}}</div>
+        }
+    </div>
+    <div class="col-3">
+        <select>
+            <option>Select an option</option>
+            @for (item of city; track $index) {
+                <option>{{item}}</option>
+            }
+        </select>
+    </div>
+    <div class="col-3">
+        <select>
+            <option>Select name</option>
+            @for (item of student; track $index) {
+            <option [value]="item.studID">{{item.name}}</option>
+            }
+        </select>
+    </div>
+    <div class="col-3">
+        <table class="table table-bordered">
+            <tr>
+                <th>Sr No</th>
+                <th>Name</th>
+                <th>City</th>
+                <th>Status</th>
+            </tr>
+            @for (item of student; track $index) {
+            <tr>
+                <th>{{$index+1}}</th>
+                <th>{{item.name}}</th>
+                <th>{{item.city}}</th>
+                @if(item.isActive==true){
+                    <th>Active</th>
+                }@else {
+                    <th>De-active</th>
+                }
+            </tr>
+        }
+        </table>
+    </div>
+</div>

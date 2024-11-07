@@ -1,0 +1,103 @@
+<nav class="navbar bg-dark navbar-expand-lg">
+  <div class="container-fluid">
+    <a class="navbar-brand text-white" href="#">Angular18</a>
+    <button class="navbar-toggler bg-white" type="button" data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+      aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item dropdown">
+          <button class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+            Basics
+          </button>
+          <ul class="dropdown-menu dropdown-menu-dark">
+            <li><a class="dropdown-item" routerLink="add-emp">Add-Employee</a></li>
+            <li><a class="dropdown-item" routerLink="emp-list">Employee List</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <button class="btn btn-dark dropdown-toggle mx-2" data-bs-toggle="dropdown" aria-expanded="false">
+            Directive
+          </button>
+          <ul class="dropdown-menu dropdown-menu-dark">
+            <li><a class="dropdown-item" routerLink="attribute-directive">Attibute-Directive</a></li>
+            <li><a class="dropdown-item" routerLink="structural-directive">Structural Directive</a></li>
+            <li><a class="dropdown-item" routerLink="ng-template">ngTemplate</a></li>
+            <li><a class="dropdown-item" routerLink="ng-container">ngContainer</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <button class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+            Control flow
+          </button>
+          <ul class="dropdown-menu dropdown-menu-dark">
+            <li><a class="dropdown-item" routerLink="if-else">&#64;If-Else</a></li>
+            <li><a class="dropdown-item" routerLink="for-switch">&#64;For-Switch</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <button class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+            Forms
+          </button>
+          <ul class="dropdown-menu dropdown-menu-dark">
+            <li><a class="dropdown-item" routerLink="template-form">Template Form</a></li>
+            <li><a class="dropdown-item" routerLink="reactive-form">Reactive Form</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <button class="btn btn-dark dropdown-toggle mx-2" data-bs-toggle="dropdown" aria-expanded="false">
+            Advance
+          </button>
+          <ul class="dropdown-menu dropdown-menu-dark">
+            <li><a class="dropdown-item" routerLink="signal">Signal</a></li>
+            <li><a class="dropdown-item" routerLink="pipe">Pipes</a></li>
+            <li><a class="dropdown-item" routerLink="life-cycle-event">Life Cycle Event</a></li>
+            <li><a class="dropdown-item" routerLink="data-binding">Data-Binding</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <button class="btn btn-dark dropdown-toggle mx-2" data-bs-toggle="dropdown" aria-expanded="false">
+            API's
+          </button>
+          <ul class="dropdown-menu dropdown-menu-dark">
+            <li><a class="dropdown-item" routerLink="get-api">Get API</a></li>
+            <li><a class="dropdown-item" routerLink="put-api">Post API</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <button class="btn btn-dark dropdown-toggle mx-2" data-bs-toggle="dropdown" aria-expanded="false">
+            Decorator
+          </button>
+          <ul class="dropdown-menu dropdown-menu-dark">
+            <li><a class="dropdown-item" routerLink="decorators">Decorator's</a></li>
+            <li><a class="dropdown-item" routerLink="view-child">View Child</a></li>
+          </ul>
+        </li>
+      </ul>
+      <form class="d-flex">
+        <select class="rounded select" name="selectedRole" [(ngModel)]="selectedRole" (ngModelChange)="onSelectedChange($event)">
+          <option value="" selected disabled>Select an option</option>
+          <option value="user">User Role</option>
+          <option value="guest">Guest Role</option>
+        </select>
+        <li class="nav-item dropdown text-center m-2">
+          <button class="btn btn-dark dropdown-toggle mx-2" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fa-regular fa-user" style="color: #ff0040;"></i>
+          </button>
+          <ul class="dropdown-menu dropdown-menu-dark">
+            <span class="text-white text-center m-2">{{loggedUserData?.emailId}}</span>
+          </ul>
+        </li>
+        <button class="btn btn-danger" (click)="onLogout()" type="button">Logout</button>
+      </form>
+    </div>
+  </div>
+</nav>
+<footer>
+
+</footer>
+<div class="container">
+  <router-outlet></router-outlet>
+</div>

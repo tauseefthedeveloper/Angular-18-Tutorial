@@ -1,0 +1,71 @@
+<div class="row bg-secondary text-white p-3 m-3">
+    <div class="col">
+        <h2>Get Api integration,&#64;Input and &#64;Output</h2>
+    </div>
+</div>
+<app-alert [message]="'Welcome to Get API!'" [alertType]="'Success'"></app-alert>
+<app-alert [message]="'Welcome to Get API!'" [alertType]="'Warning'"></app-alert>
+<div class="row">
+    <div class="col-3">
+        <button class="btn btn-success" (click)="getAllUser()">Get Users</button>
+        <button class="btn btn-danger mx-2" (click)="getCustomerData()">Get Customers</button>
+    </div>
+</div>
+<div class="row m-3">
+    <div class="col-6">
+        <div class="m-3">
+            <app-alert [message]="alertMsg" [alertType]="'Info'"></app-alert>
+        </div>
+        <button class="btn btn-info" (click)="onClickChangeAlert()">Change Mesage</button>
+    </div>
+</div>
+<div class="row mt-3">
+    <div class="col">
+        <h5>User's data from Api</h5>
+        <table class="table table-bordered">
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>User Name</th>
+                <th>Email</th>
+                <th>City</th>
+                <th>Address</th>
+            </tr>
+            @for (item of userList; track $index) {
+            <tr>
+                <td>{{item.id}}</td>
+                <td>{{item.name}}</td>
+                <td>{{item.name}}</td>
+                <td>{{item.email}}</td>
+            </tr>
+            }
+        </table>
+    </div>
+</div>
+<div class="row mt-3">
+    <div class="col">
+        <h5>Customers's data from Api</h5>
+        <table class="table table-bordered">
+            <tr>
+                <th>User Id</th>
+                <th>Username</th>
+                <th>Email</th>
+                <th>Full Name</th>
+                <th>Role</th>
+                <th>Create Date</th>
+                <th>Password</th>
+                <th>Prj. Name</th>
+            </tr>
+            @for (item of customerData; track $index) {
+            <tr>
+                <td>{{item.custId}}</td>
+                <td>{{item.name}}</td>
+                <td>{{item.emailid}}</td>
+                <td>{{item.name | titlecase}}</td>
+                <td>{{item.mobile}}</td>
+                <td>{{item.address}}</td>
+            </tr>
+            }
+        </table>
+    </div>
+</div>

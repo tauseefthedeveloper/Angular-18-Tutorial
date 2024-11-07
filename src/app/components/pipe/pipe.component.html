@@ -1,0 +1,96 @@
+<div class="text-white">
+    <div class="bg-secondary p-3 m-3 rounded">
+      <h2>Pipe in Angular</h2>
+      <h6>Default Pipe & Custom Pipe</h6>
+    </div>
+</div>
+<div class="row">
+    <div class="col-3">
+        Orginal value - {{firstname}}
+        <br>
+        after Pipe - {{firstname | uppercase}}
+    </div>
+    <div class="col-3">
+        Orginal value - {{firstname}}
+        <br>
+        after Pipe - {{firstname | lowercase}}
+    </div>
+    <div class="col-3">
+        Orginal value - {{titleis}}
+        <br>
+        after Pipe - {{titleis | titlecase}}
+    </div>
+    <div class="col-3">
+        Orginal value -
+        <br>
+        after Pipe -
+    </div>
+</div>
+<div class="row m-3">
+    <div class="col-3">
+        Orginal value - {{currentDate}}
+        <br>
+        after pipe - {{currentDate |date}}
+    </div>
+    <div class="col-3">
+        Orginal value - {{currentDate | date:'dd-MM-yy'}}
+        <br>
+        after pipe - {{currentDate | date:'dd-MM-yyyy'}}
+    </div>
+    <div class="col-3">
+        Orginal value - {{currentDate | date:'dd-MMM-yyyy'}}
+        <br>
+        after pipe - {{currentDate | date:'dd/MMM/yy'}}
+    </div>
+    <div class="col-3">
+        Orginal value -
+        <br>
+        after pipe -
+    </div>
+</div>
+<div class="row">
+    <div class="col-3">
+        Decimal value orginal - {{decimalno}}
+        <br>
+        after pipe decimale value- {{decimalno |number:'1.2-2'}}
+    </div>
+    <div class="col-3">
+        Orginal amount - {{amount}}
+        <br>
+        after pipe - {{amount | currency:'USD':'symbol':'1.2-2'}}
+    </div>
+    <div class="col-3">
+        Orginal percent - {{percentVal}}
+        <br>
+        after pipe - {{percentVal |percent:'1.0-0'}}
+    </div>
+</div>
+<div class="row m-3">
+    <div class="col-3">
+        Orginal value - {{student}}
+        <br>
+        after pipe - {{student | json}}
+    </div>
+    <div class="col-3">
+        Orginal value - {{currentTime}}
+        <br>
+        after pipe - {{ currentTime | async}}
+        <br>
+        after pipe - {{currentTime | async | date:'hh:mm:ss'}}
+    </div>
+    <div class="col-3">
+        Orginal value - {{student.city}}
+        <br>
+        without pipe - {{student.city}}
+        <br>
+        after pipe - {{student.city | na}}
+    </div>
+</div>
+<div class="row m-3">
+    <div class="col-4">
+        Current Role of user - {{currentRole}}
+    </div>
+    <div class="col-4">
+        Role of user - {{role}}
+    </div>
+</div>
