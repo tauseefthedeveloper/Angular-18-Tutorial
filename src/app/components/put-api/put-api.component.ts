@@ -61,7 +61,7 @@ export class PutApiComponent implements OnInit {
     this.deptObj = data;
   }
   onUpdate() {
-    this.http.post("https://projectapi.gerasim.in/api/Complaint/UpdateDepartment", this.deptObj).subscribe((res: any) => {
+    this.http.post("/api/Complaint/UpdateDepartment", this.deptObj).subscribe((res: any) => {
       if (res.result) {
         this.getDepartment();
         alert("Department Updated Successfully.")
@@ -73,7 +73,7 @@ export class PutApiComponent implements OnInit {
   onDelete(id: number) {
     const isDeleteConfirms = confirm("Are you sure to delete?");
     if (isDeleteConfirms) {
-      this.http.delete("https://projectapi.gerasim.in/api/Complaint/DeletedepartmentBydepartmentId?departmentId=" + id).subscribe((res: any) => {
+      this.http.delete("/api/Complaint/DeletedepartmentBydepartmentId?departmentId=" + id).subscribe((res: any) => {
         if (res.result) {
           this.getDepartment();
           alert("Department Deleted Successfully.")

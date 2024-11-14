@@ -33,8 +33,9 @@ export class GetApiComponent {
     });
   }
   getCustomerData(){
-    this.http.get('https://projectapi.gerasim.in/api/RealEstate/GetAllCustomers').subscribe((res:any)=>{
+    this.http.get('/api/RealEstate/GetAllCustomers').subscribe((res:any)=>{
       this.customerData=res.data;
+	  console.log(res.data);
     })
   }
 }

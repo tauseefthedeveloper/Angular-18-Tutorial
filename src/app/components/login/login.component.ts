@@ -17,15 +17,15 @@ export class LoginComponent {
   //   password:'',
   // };
   userObj: any={
-    EmailId:'',
-    Password:'',
+    userName:'',
+    password:'',
   };
 
   router = inject(Router); 
   http = inject(HttpClient) 
   onLogin(){
     console.log(this.userObj)
-    this.http.post('https://projectapi.gerasim.in/api/UserApp/Login',this.userObj).subscribe((res:any)=>{
+    this.http.post('/api/Complaint/login',this.userObj).subscribe((res:any)=>{
       if(res.result){
         alert('Login Success');
         localStorage.setItem('emailId',JSON.stringify(res.data))

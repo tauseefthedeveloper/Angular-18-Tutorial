@@ -14,12 +14,16 @@ export class DepartmentService {
   constructor(private http:HttpClient) {
   }
   getAllDept(){
-    // return this.http.get("https://projectapi.gerasim.in/api/Complaint/GetParentDepartment")
-    return this.http.get(Constant.API_URL+Constant.department_methods.GET_PARENT_Dept)
+    //return this.http.get("https://projectapi.gerasim.in/api/Complaint/GetParentDepartment")
+    //return this.http.get(Constant.API_URL+Constant.department_methods.GET_PARENT_Dept)
+	return this.http.get(`/api/Complaint/${Constant.department_methods.GET_PARENT_Dept}`);
+
   }
   saveNewDept(obj:any){
     // return this.http.post("https://projectapi.gerasim.in/api/Complaint/AddNewDepartment",obj);
-    return this.http.post(`${Constant.API_URL}${Constant.department_methods.ADD_NEW_DEPT}`,obj);
+    //return this.http.post(`${Constant.API_URL}${Constant.department_methods.ADD_NEW_DEPT}`,obj);
+	return this.http.post(`/api/Complaint/${Constant.department_methods.ADD_NEW_DEPT}`, obj);
+
   }
   addTwoNo(num1:number,num2:number){
     return num1+num2;

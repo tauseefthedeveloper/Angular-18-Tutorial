@@ -1,5 +1,5 @@
 export const Constant = {
-    API_URL:'https://projectapi.gerasim.in/api/Complaint/',
+    API_URL:'https://projectapi.gerasim.in',
     department_methods:{
         GET_PARENT_Dept:'GetParentDepartment',
         ADD_NEW_DEPT:'AddNewDepartment'
