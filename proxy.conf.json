@@ -1,6 +1,6 @@
 {
   "/api": {
-    "target": "https://tauseefthedeveloper.github.io/Angular-18-Tutorial",
+    "target": "https://projectapi.gerasim.in",
     "secure": false,
     "changeOrigin": true,
     "logLevel": "debug"
